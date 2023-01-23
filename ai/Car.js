@@ -235,9 +235,9 @@ export default class Car {
     // [left, right, up, left up, right up, none] (6) + drift for each option (6)
     return 12;
   }
-	/**
-	 * @param {CanvasRenderingContext2D} ctx 
-	 */
+  /**
+   * @param {CanvasRenderingContext2D} ctx
+   */
   render(ctx) {
     ctx.fillStyle = this.color;
     ctx.save();

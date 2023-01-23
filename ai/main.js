@@ -136,20 +136,20 @@ env.startLearn(
     const action = agent.act(state);
     const reward = env.update(action);
     agent.learn(reward);
-		reward === -1 && iterations++;
+    reward === -1 && iterations++;
   },
   () => {}
 );
-window.addEventListener('unload', () => {
-	localStorage.setItem('agent', JSON.stringify(agent.toJSON()));
-	localStorage.setItem('agent-iterations', iterations);
+window.addEventListener("unload", () => {
+  localStorage.setItem("agent", JSON.stringify(agent.toJSON()));
+  localStorage.setItem("agent-iterations", iterations);
 });
-if (localStorage.getItem('agent')) {
-	if (confirm('Load agent?')) {
-		agent.fromJSON(JSON.parse(localStorage.getItem('agent')));
-		iterations = parseInt(localStorage.getItem('agent-iterations'));
-		console.log('loaded agent with iterations', iterations);
-	}
+if (localStorage.getItem("agent")) {
+  if (confirm("Load agent?")) {
+    agent.fromJSON(JSON.parse(localStorage.getItem("agent")));
+    iterations = parseInt(localStorage.getItem("agent-iterations"));
+    console.log("loaded agent with iterations", iterations);
+  }
 }
 
 const canvas = document.createElement("canvas");
@@ -259,8 +259,8 @@ const render = (time) => {
   ctx.font = "20px Arial";
   ctx.textBaseline = "top";
   ctx.fillText(progress.toString(), 10, 10);
-	// iterations
-	ctx.fillText(iterations.toString(), 10, 40);
+  // iterations
+  ctx.fillText(iterations.toString(), 10, 40);
 
   requestAnimationFrame(render);
 };
